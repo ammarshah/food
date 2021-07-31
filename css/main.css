@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Custom Properties */
+:root {
+    --leading: 2em; /* Declaring a variable named 'leading' */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.hero-bg {
+    background: #307D99 url('../images/hero-bg.jpg');
+    background-position: 12% 72%; /* Specifying X & Y values to alter the background image position */
+    color: white;
+    text-align: center;
+    padding-bottom: 4em;
+}
+
+header {
+    padding: 1em 0; /* 1em padding on top and bottom and no padding on left and right */
+}
+
+.hero-bg a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+section {
+    margin: 0 1em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 2em 0 1.2em;
+}
+
+h1 span {
+    text-transform: uppercase;
+    display: block; /* This means that it's gonna be on its own block, nothing is gonna float to the left & right of it */
+    font-size: 1.5rem;
+    position: relative; /* This is to make the blue underline come under the span element and not at the bottom of the page */
+    z-index: 1;
+}
+
+h1 span::before {
+    content: ' ';
+    position: absolute; /* It allows you to break outside of the traditional box model and you can situate things anywhere */
+    background: #00BFFF;
+    width: 4.7em;
+    height: .4em;
+    bottom: 0; /* We had to add "position: relative" to "h1 span" or this will make the blue underline go at the bottom of the page */
+    z-index: -1; /* This will make the underline go behind the heading. We had to add "z-index: 1" to "h1 span" for this to work */
+    margin-left: -.3em; /* To make the blue underline move a little bit to the left side of the heading */
+}
+
+.hero-bg p {
+    font-weight: bold;
+    margin: 0 1.5em 3em; /* 0 on the top, 1em on left and right and 3em on the bottom */
+}
+
+.form-container {
+    background: white;
+    margin: 2em -1em 0; /* -1em on left and right is to push the form div to the edges of the screen like we have in the prototype because we added "margin" on the section element */
+    padding: 2em;
+}
+
+label {
+    color: #2D7D98;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2rem;
+}
+
+input[type="text"] {
+    border: 1px solid #707070;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box; /* Whenever you add padding along with the width it will add up both the values and add it to the left and right of the element, like here 100% + 1em. "Border-box" fixes this issue */
+    border-radius: .5em;
+    margin-top: 1.2em;
+}
+
+.form-container p {
+    color: gray;
+    margin: .3em 0 1.5em;
+    font-weight: normal;
+    font-size: .9rem;
+}
+
+input[type="button"] {
+    background-color: #F89104;
+    border: none;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    padding: 1em 0;
+    border-radius: .5em;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #db8001;
+}
+
+.authentic {
+    margin: 0;
+}
+
+.right-col {
+    text-align: center;
+    margin: 3em 1em;
+}
+
+h2 {
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2::before {
+    content: ' ';
+    position: absolute; /* It allows you to break outside of the traditional box model and you can situate things anywhere */
+    background: #87e1ff;
+    width: 12em;
+    height: .4em;
+    bottom: 0; /* We had to add "position: relative" to "h1 span" or this will make the blue underline go at the bottom of the page */
+    z-index: -1; /* This will make the underline go behind the heading. We had to add "z-index: 1" to "h1 span" for this to work */
+    margin-left: -.3em; /* To make the blue underline move a little bit to the left side of the heading */
+}
+
+img {
+    width: 100%;
+}
+
+.right-col p {
+    line-height: var(--leading); /* Using a custom property that is declared at the top */
+}
