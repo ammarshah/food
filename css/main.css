@@ -141,6 +141,52 @@ img {
     line-height: var(--leading); /* Using a custom property that is declared at the top */
 }
 
+.top {
+    animation: fadeIn 2s forwards; /* fadeIn is the name of the animation, it could be any name. It will run for 2 seconds and then it will stop. Forwards is used to stop the animation after one time and not go in a loop */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.9);
+    z-index: 1;
+    color: white;
+    place-content: center; /* It's a quick way to center content in a grid. We had to use "display: grid" but we don't want to show it when the page loads */
+    display: none;
+    opacity: 0;
+}
+
+.animate-overlay {
+    animation: overlay 3s forwards;
+}
+
+@keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 @media (min-width: 730px) {
 
     section {
@@ -216,19 +262,4 @@ img {
         grid-area: bowl; /* Giving the area name "bowl" to the image */
     }
 
-}
-
-.top {
-    animation: fadeIn 2s forwards; /* fadeIn is the name of the animation, it could be any name. It will run for 2 seconds and then it will stop. Forwards is used to stop the animation after one time and not go in a loop */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-2em);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
