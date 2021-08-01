@@ -59,7 +59,7 @@ h1 span::before {
 
 .hero-bg p {
     font-weight: bold;
-    margin: 0 1.5em 3em; /* 0 on the top, 1em on left and right and 3em on the bottom */
+    margin: 0 1em 3em; /* 0 on the top, 1em on left and right and 3em on the bottom */
 }
 
 .form-container {
@@ -139,4 +139,96 @@ img {
 
 .right-col p {
     line-height: var(--leading); /* Using a custom property that is declared at the top */
+}
+
+@media (min-width: 730px) {
+
+    section {
+        margin: 0 4em;
+    }
+
+    .form-container {
+        margin: 2em -4em 0; /* -4em on left and right is to push the form div to the edges of the screen like we have in the prototype because we added "margin" on the section element */
+    }
+
+}
+
+@media (min-width: 930px) {
+
+    .hero-bg {
+        text-align: left;
+    }
+
+    .hero-bg p {
+        margin: 0 0em 3em;
+    }
+
+    .hero-bg section {
+        width: 65%;
+    }
+
+    .form-container {
+        margin: 2em 0 0;
+        border-radius: 1em;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.3); /* X,Y,Blur Amount, Shadow Color (a in rgba is for opacity) */
+    }
+
+    form {
+        display: flex;
+    }
+
+    .form-left {
+        width: 70%;
+    }
+
+    input[type="button"] {
+        width: 30%;
+        height: fit-content;
+        margin-left: 1em;
+        margin-top: 2.2em;
+        font-size: 1.1rem;
+        padding: .7em 0;
+    }
+
+    label {
+        margin: 0;
+    }
+
+    .hero-bg p {
+        margin: .2em 0 0;
+    }
+
+    .authentic {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas: "bowl content"; /* We named 2 areas of the grid. First should be "bowl" and then "content" */
+    }
+
+    .right-col {
+        grid-area: content; /* Giving the area name "content" to the .right-col */
+        padding: 0 10%;
+        font-size: .7rem;
+        text-align: left;
+        align-self: center; /* To keep the content vertically aligned, no matter how high the content gets */
+    }
+
+    .authentic img {
+        grid-area: bowl; /* Giving the area name "bowl" to the image */
+    }
+
+}
+
+.top {
+    animation: fadeIn 2s forwards; /* fadeIn is the name of the animation, it could be any name. It will run for 2 seconds and then it will stop. Forwards is used to stop the animation after one time and not go in a loop */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
